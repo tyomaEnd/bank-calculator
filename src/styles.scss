@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+//Подкоючение шрифтов=============================
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+//Переменные======================================
+$gray: #747474;
+$dark-gray: #2c2c2c;
+
+//Общие параметры================================
+body {
+  font-family: 'Roboto', "Helvetica Neue", sans-serif;
+  background-color: #EDEFF3;
+  margin: 0;
+}
+
+input, select, textarea {
+  display: block;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 10px;
+  color: $dark-gray;
+}
+
+//Контейнер=======================================
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+//Стили===========================================
+.header {
+  background-color: #fff;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  .logo {
+    &__link {
+    }
+
+    &__img {
+      height: 48px;
+      width: 235px;
+    }
+  }
+
+  .navigate {
+    height: 100%;
+    &__list {
+      display: flex;
+      padding: 0 16px;
+      margin: 0;
+      height: 100%;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 18px;
+      font-size: 18px;
+      font-weight: bold;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        border-bottom: 4px solid #0072b3;
+      }
+    }
+    &__link {
+      color: #000;
+      text-decoration: none;
+      text-align: center;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+
+  .social-media {
+    display: flex;
+
+    &__link {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__img {
+      height: 48px;
+
+      &:hover {
+        transform: scale(0.9);
+        transition: 0.6s;
+      }
+    }
+  }
+}
