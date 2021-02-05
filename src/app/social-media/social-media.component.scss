@@ -1,0 +1,41 @@
+@mixin animate-icon($after-hover-color) {
+  text-decoration: none;
+  background: 100% / 200% 100% linear-gradient(to right, $after-hover-color, $after-hover-color 50%, #656565 50%);
+  transition: background-position 400ms ease;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+
+.social-media {
+  display: inline-block;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    font-size: 47px;
+    line-height: 0;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__github {
+    @include animate-icon(#000);
+  }
+
+  &__linkedin {
+    @include animate-icon(#0076B2);
+  }
+
+  &__telegram {
+    @include animate-icon(#449FDB);
+  }
+}

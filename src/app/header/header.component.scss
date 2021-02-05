@@ -1,0 +1,122 @@
+//Цвет бургер иконки
+$color-strip: #0072b3;
+
+.header {
+  background-color: #fff;
+
+  &__wrapper {
+    height: 60px;
+  }
+
+  &__burger-navigate {
+    display: none;
+  }
+
+  .navigate {
+    height: 100%;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      margin: 0;
+      height: 100%;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 18px;
+      font-size: 18px;
+      font-weight: bold;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        border-bottom: 4px solid #0072b3;
+        //border-bottom: 4px solid #cbcbcb;
+        box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
+      }
+    }
+
+    &__link {
+      color: #000;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+
+  @media (max-width: 972px) {
+    .header__wrapper {
+      height: 60px;
+    }
+    .navigate {
+      height: auto;
+
+      &__list {
+        display: none;
+      }
+    }
+      //Реализация иконки бургер-меню
+      .navigate__burger {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+        & span {
+          width: 50px;
+          height: 6px;
+          background: $color-strip;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
+          transition: all .5s ease-in-out;
+        }
+      }
+
+      .navigate__burger span:before,
+      .navigate__burger span:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: $color-strip;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
+        transition: all .5s ease-in-out;
+      }
+
+      .navigate__burger span:before {
+        transform: translateY(-16px);
+      }
+
+      .navigate__burger span:after {
+        transform: translateY(16px);
+      }
+
+      .navigate__burger.open span {
+        transform: translateX(50px);
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .navigate__burger.open span:before {
+        transform: rotate(45deg) translate(-35px, 35px);
+      }
+
+      .navigate__burger.open span:after {
+        transform: rotate(-45deg) translate(-35px, -35px);
+      }
+    }
+  }
