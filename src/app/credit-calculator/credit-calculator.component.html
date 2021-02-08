@@ -6,45 +6,61 @@
         платежа, сумме
         переплаты, процентной ставке.</p>
     </div>
-    <div class="credit-calculator__form">
-      <div class="credit-calculator__left-side">
-        <div class="one-input-per-line">
-          <label for="sum-credit">Сумма кредита</label>
-          <input type="text" id="sum-credit">
-        </div>
-        <div class="two-input-per-line">
-          <div class="two-input-per-line__one-input">
-            <label for="time">Срок</label>
-            <select name="select" id="time"></select>
+    <div class="credit-calculator__wrapper">
+      <div class="credit-calculator__form">
+        <div class="credit-calculator__left-side">
+          <div class="one-input-per-line">
+            <label for="sum-credit">Сумма кредита</label>
+            <input type="text" id="sum-credit">
           </div>
-          <div class="two-input-per-line__two-input">
-            <label for="rate">Ставка, %</label>
-            <input type="text" id="rate">
+          <div class="two-input-per-line">
+            <div class="two-input-per-line__one-input">
+              <label for="time">Срок</label>
+              <select name="select" id="time"></select>
+            </div>
+            <div class="two-input-per-line__two-input">
+              <label for="rate">Ставка, %</label>
+              <input type="text" id="rate">
+            </div>
+          </div>
+        </div>
+        <div class="credit-calculator__right-side">
+          <div class="color-bar">
+            <div class="color-bar__designation">
+              <div class="color-bar__credit">
+                <span class="credit__dot"></span>
+                <span class="color-bar__text">Кредит</span>
+              </div>
+              <div class="color-bar__overpayment">
+                <span class="overpayment__dot"></span>
+                <span class="color-bar__text">Переплата</span>
+              </div>
+            </div>
+            <div class="color-bar__strip"><<--полоскаполосочкадлиннаядлиннаяполосочка-->></div>
+          </div>
+          <div class="credit-calculator__calculations">
+            <h2>Результаты расчета</h2>
+            <div class="table-results">
+              <ul class="table-results__list">
+                <li class="table-results__item">
+                  <span class="table-results__key">Ежемесячный платеж</span>
+                  <span class="table-results__value">10 000 ₽</span>
+                </li>
+                <li class="table-results__item">
+                  <span class="table-results__key">Переплата по кредиту</span>
+                  <span class="table-results__value">11 111 ₽</span>
+                </li>
+                <li class="table-results__item">
+                  <span class="table-results__key">Общая выплата</span>
+                  <span class="table-results__value">55 555 ₽</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="credit-calculator__right-side">
-        <div class="color-bar">
-          <div class="color-bar__credit">
-            <span class="credit__dot"></span>
-            <span class="credit__text">Кредит</span>
-          </div>
-          <div class="color-bar__overpayment">
-            <span class="overpayment__dot"></span>
-            <span class="overpayment__text">Переплата</span>
-          </div>
-          <div class="color-bar__strip"></div>
-        </div>
-        <div class="calculations">
-          <h2>Результаты расчета</h2>
-          <div class="table-results">
-            <ul>
-              <li>Ежемесячный платеж</li>
-              <li>Переплата по кредиту</li>
-              <li>Общая выплата</li>
-            </ul>
-          </div>
-        </div>
+      <div class="credit-calculator__button">
+        <button class="button__payment-schedule">Расскрыть график платежей</button>
       </div>
     </div>
   </div>

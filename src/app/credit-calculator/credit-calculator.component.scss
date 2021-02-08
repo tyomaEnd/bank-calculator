@@ -1,3 +1,12 @@
+@mixin dot-color-bar($bg-color) {
+  display: inline-block;
+  background-color: $bg-color;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
 .credit-calculator {
   .header {
     &__title {
@@ -11,11 +20,17 @@
     }
   }
 
-  &__form {
-    display: flex;
+  &__wrapper {
     background: white;
     border-radius: 4px;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+  }
+
+  &__form {
+    display: flex;
+  }
+  &__left-side {
+    border-right: 1px solid #eceff1;
   }
   &__left-side, &__right-side {
     box-sizing: border-box;
@@ -36,7 +51,55 @@
   }
 
   .color-bar {
-    display: flex;
+    &__designation {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    &__credit {
+      margin-right: 16px;
+      .credit__dot {
+        @include dot-color-bar(rgb(46, 204, 113));
+      }
+    }
+    &__overpayment {
+      .overpayment__dot {
+        @include dot-color-bar(rgb(255, 201, 46));
+      }
+    }
+    &__text {
+      font-size: 14px;
+    }
   }
 
+  &__calculations {
+    .table-results {
+      &__list {}
+      &__item {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px 10px 0;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+      &__key {
+        color: #747474;
+      }
+    }
+  }
+
+  .button__payment-schedule {
+    height: 25px;
+    width: 100%;
+    cursor: pointer;
+    background: #fdfdfd;
+    border: 1px solid lightgray;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background: #f1f1f159;
+    }
+  }
 }
