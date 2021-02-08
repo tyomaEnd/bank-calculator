@@ -18,8 +18,21 @@ input, select, textarea {
   font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 10px 10px;
+  padding: 12px 12px;
   color: $dark-gray;
+  width: 100%;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+    border: 1px solid #129bec;
+  }
+}
+
+label {
+  display: inline-block;
+  font-size: 14px;
+  color: $gray;
+  margin-bottom: 7px;
 }
 
 //Контейнер=======================================
@@ -30,6 +43,8 @@ input, select, textarea {
 }
 
 //Стили===========================================
+
+
 @media (max-width: 972px) {
   .container {
     padding: 0 16px 0 10px;

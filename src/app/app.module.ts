@@ -6,6 +6,7 @@ import {HeaderComponent} from './header/header.component';
 import {ColorBarComponent} from './widgets/color-bar/color-bar.component';
 import {FormsModule} from '@angular/forms';
 import { SocialMediaComponent } from './social-media/social-media.component';
+import { CreditCalculatorComponent } from './credit-calculator/credit-calculator.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SocialMediaComponent } from './social-media/social-media.component';
     HeaderComponent,
     ColorBarComponent,
     SocialMediaComponent,
+    CreditCalculatorComponent,
   ],
   imports: [
     BrowserModule,
