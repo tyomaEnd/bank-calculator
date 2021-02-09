@@ -11,16 +11,19 @@
         <div class="credit-calculator__left-side">
           <div class="one-input-per-line">
             <label for="sum-credit">Сумма кредита</label>
-            <input type="text" id="sum-credit">
+            <input type="text" id="sum-credit" maxlength="11" [(ngModel)]="inputSumValue" (change)="recount()">
           </div>
           <div class="two-input-per-line">
             <div class="two-input-per-line__one-input">
               <label for="time">Срок</label>
-              <select name="select" id="time"></select>
+              <select name="select" id="time" (change)="recount()">
+                <option value="" disabled selected>Выберите срок кредита</option>
+                <option *ngFor="let x of creditDuration" [value]="x">{{x.title}}</option>
+              </select>
             </div>
             <div class="two-input-per-line__two-input">
               <label for="rate">Ставка, %</label>
-              <input type="text" id="rate">
+              <input type="text" id="rate" [(ngModel)]="inputRate" (change)="recount()">
             </div>
           </div>
         </div>
@@ -36,7 +39,10 @@
                 <span class="color-bar__text">Переплата</span>
               </div>
             </div>
-            <div class="color-bar__strip"><<--полоскаполосочкадлиннаядлиннаяполосочка-->></div>
+            <div class="color-bar__strip" >
+              <span class="credit" [ngStyle]="{flexBasis: inputSumValue / totalPayout * 100 + '%'}"></span>
+              <span class="overpayment"></span>
+            </div>
           </div>
           <div class="credit-calculator__calculations">
             <h2>Результаты расчета</h2>
@@ -44,15 +50,15 @@
               <ul class="table-results__list">
                 <li class="table-results__item">
                   <span class="table-results__key">Ежемесячный платеж</span>
-                  <span class="table-results__value">10 000 ₽</span>
+                  <span class="table-results__value">{{monthlyPayment}} ₽</span>
                 </li>
                 <li class="table-results__item">
                   <span class="table-results__key">Переплата по кредиту</span>
-                  <span class="table-results__value">11 111 ₽</span>
+                  <span class="table-results__value">{{overpaymentCredit}} ₽</span>
                 </li>
                 <li class="table-results__item">
                   <span class="table-results__key">Общая выплата</span>
-                  <span class="table-results__value">55 555 ₽</span>
+                  <span class="table-results__value">{{totalPayout}} ₽</span>
                 </li>
               </ul>
             </div>
