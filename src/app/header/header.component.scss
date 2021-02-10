@@ -1,20 +1,13 @@
-//Цвет бургер иконки
-$color-strip: #0072b3;
+@import "../shared/variables-styles";
 
 .header {
   background-color: #fff;
-
-  &__wrapper {
-    height: 60px;
-  }
 
   &__burger-navigate {
     display: none;
   }
 
   .navigate {
-    height: 100%;
-
     &__list {
       display: flex;
       justify-content: center;
@@ -26,29 +19,29 @@ $color-strip: #0072b3;
     &__item {
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 21%;
       list-style: none;
-      margin-right: 18px;
       font-size: 18px;
-      font-weight: bold;
-
+      border-left: 1px solid #dfdfdf;
+      box-shadow: 0px -2px 2px rgb(0 0 0 / 5%);
+      border-bottom: 1px solid #dfdfdf;
       &:last-child {
-        margin-right: 0;
+        border-right: 1px solid #dfdfdf;
       }
-
       &:hover {
-        border-bottom: 4px solid #0072b3;
-        //border-bottom: 4px solid #cbcbcb;
-        box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
+        border-top: 1px solid $blue;
       }
     }
 
     &__link {
-      color: #000;
+      color: #808080ab;
       text-decoration: none;
       text-align: center;
-
+      width: 100%;
+      padding: 16px 0;
       &:hover {
-        color: cornflowerblue;
+        color: $blue;
       }
     }
   }
@@ -64,62 +57,68 @@ $color-strip: #0072b3;
         display: none;
       }
     }
-      //Реализация иконки бургер-меню
-      .navigate__burger {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-        cursor: pointer;
-        transition: all .5s ease-in-out;
+    //Реализация иконки бургер-меню
+    .navigate__burger {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: all .5s ease-in-out;
 
-        & span {
-          width: 50px;
-          height: 6px;
-          background: $color-strip;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
-          transition: all .5s ease-in-out;
-        }
-      }
-
-      .navigate__burger span:before,
-      .navigate__burger span:after {
-        content: '';
-        position: absolute;
+      & span {
         width: 50px;
         height: 6px;
-        background: $color-strip;
+        background: $blue;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
         transition: all .5s ease-in-out;
       }
+    }
 
-      .navigate__burger span:before {
-        transform: translateY(-16px);
-      }
+    .navigate__burger span:before,
+    .navigate__burger span:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 6px;
+      background: $blue;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgb(188 188 188 / 79%);
+      transition: all .5s ease-in-out;
+    }
 
-      .navigate__burger span:after {
-        transform: translateY(16px);
-      }
+    .navigate__burger span:before {
+      transform: translateY(-16px);
+    }
 
-      .navigate__burger.open span {
-        transform: translateX(50px);
-        background: transparent;
-        box-shadow: none;
-      }
+    .navigate__burger span:after {
+      transform: translateY(16px);
+    }
 
-      .navigate__burger.open span:before {
-        transform: rotate(45deg) translate(-35px, 35px);
-      }
+    .navigate__burger.open span {
+      transform: translateX(50px);
+      background: transparent;
+      box-shadow: none;
+    }
 
-      .navigate__burger.open span:after {
-        transform: rotate(-45deg) translate(-35px, -35px);
-      }
+    .navigate__burger.open span:before {
+      transform: rotate(45deg) translate(-35px, 35px);
+    }
+
+    .navigate__burger.open span:after {
+      transform: rotate(-45deg) translate(-35px, -35px);
     }
   }
+}
+
 .active {
-  background-color: bisque;
+  background-color: #EDEFF3;
+  color: $blue !important;
+  cursor: default;
+  border-bottom: 0 !important;
+  border-top: 1px solid $blue!important;
+  box-shadow: 2px 0 0 rgb(188 188 188 / 40%), -2px 0 0 rgb(188 188 188 / 40%);
 }

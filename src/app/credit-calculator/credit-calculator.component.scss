@@ -78,7 +78,8 @@
         width: 50%;
         background-color: rgb(46, 204, 113);
         border-radius: 10px 0 0 10px;
-        flex: 0 1 85%;
+        flex: 0 1 auto;
+        transition: all 1s;
       }
       .overpayment {
         height: 100%;
@@ -86,6 +87,7 @@
         background-color: rgb(255, 201, 46);
         border-radius: 0 10px 10px 0;
         flex: 1 0 auto;
+        transition: all 1s;
       }
     }
   }

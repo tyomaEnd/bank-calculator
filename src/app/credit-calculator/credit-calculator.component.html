@@ -11,19 +11,19 @@
         <div class="credit-calculator__left-side">
           <div class="one-input-per-line">
             <label for="sum-credit">Сумма кредита</label>
-            <input type="text" id="sum-credit" maxlength="11" [(ngModel)]="inputSumValue" (change)="recount()">
+            <input type="text" id="sum-credit" maxlength="11" placeholder="100 000" [(ngModel)]="inputSumValue" (keyup)="recount()">
           </div>
           <div class="two-input-per-line">
             <div class="two-input-per-line__one-input">
               <label for="time">Срок</label>
-              <select name="select" id="time" (change)="recount()">
-                <option value="" disabled selected>Выберите срок кредита</option>
-                <option *ngFor="let x of creditDuration" [value]="x">{{x.title}}</option>
+              <select name="select" id="time" [(ngModel)]="duration" (change)="recount()">
+                <option value="" disabled selected >Выберите срок кредита</option>
+                <option *ngFor="let x of creditDuration" [ngValue]="x">{{x.title}}</option>
               </select>
             </div>
             <div class="two-input-per-line__two-input">
               <label for="rate">Ставка, %</label>
-              <input type="text" id="rate" [(ngModel)]="inputRate" (change)="recount()">
+              <input type="text" id="rate" placeholder="10,5" [(ngModel)]="inputRate" (keyup)="recount()">
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="color-bar__strip" >
               <span class="credit" [ngStyle]="{flexBasis: inputSumValue / totalPayout * 100 + '%'}"></span>
-              <span class="overpayment"></span>
+              <span class="overpayment" [ngStyle]="{flexBasis: overpaymentCredit / totalPayout * 100 + '%'}"></span>
             </div>
           </div>
           <div class="credit-calculator__calculations">

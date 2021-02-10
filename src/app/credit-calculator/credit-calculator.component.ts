@@ -7,8 +7,8 @@ import {Month} from '../shared/interfaces';
   styleUrls: ['./credit-calculator.component.scss']
 })
 export class CreditCalculatorComponent implements OnInit {
-  inputSumValue = 10000;
-  inputRate = 10;
+  inputSumValue: number;
+  inputRate: number;
   duration: Month;
   cofValue: number;
   monthlyPayment: any = 0;
@@ -38,7 +38,6 @@ export class CreditCalculatorComponent implements OnInit {
     {title: '25 лет', months: 300},
     {title: '30 лет', months: 360}
   ];
-
   constructor() {
   }
 
@@ -46,7 +45,7 @@ export class CreditCalculatorComponent implements OnInit {
   }
 
   recount(): void {
-    if (this.inputSumValue) {
+    if (this.inputSumValue !== null && this.inputRate !== null && this.duration !== null) {
       this.cofValue = this.inputSumValue / 100 * this.inputRate;
       this.totalPayout = +this.inputSumValue + +this.cofValue;
       this.monthlyPayment = this.totalPayout / this.duration.months;
@@ -62,6 +61,5 @@ export class CreditCalculatorComponent implements OnInit {
       this.monthlyPayment = 0;
       this.overpaymentCredit = 0;
     }
-    console.log(this.duration);
   }
 }
