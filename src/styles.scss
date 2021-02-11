@@ -13,7 +13,7 @@ body {
   margin: 0;
 }
 
-ul {
+ul, h1, h2, p {
   margin: 0;
   padding: 0;
 }
@@ -48,10 +48,3 @@ label {
 }
 
 //Стили===========================================
-
-
-@media (max-width: 972px) {
-  .container {
-    padding: 0 16px 0 10px;
-  }
-}

@@ -1,0 +1,54 @@
+.section-one {
+  .left-side {
+    flex: 1 0 50%;
+    padding: 25px 0;
+    align-self: center;
+    &__title {
+      font-size: 48px;
+    }
+    &__text {
+      font-size: 17px;
+      margin-top: 15px;
+    }
+    &__href-btn {
+      display: inline-block;
+      margin-top: 30px;
+      color: #fff;
+      background-color: #039be5;
+      padding: 15px 25px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all .2s ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .right-side {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 50%;
+    padding: 25px 0;
+
+    .img {
+      max-height: 364px;
+    }
+  }
+}
+
+.section-two {
+  background-color: white;
+  &__title {
+    text-align: center;
+    padding: 30px 0 45px 0;
+    font-size: 32px;
+  }
+}
+
+.container_flex {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
